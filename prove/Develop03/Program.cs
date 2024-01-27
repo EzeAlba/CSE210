@@ -5,15 +5,18 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop03 World!");
+        Console.WriteLine("Please select a scripture from the list: ");
+        Console.WriteLine("1. Proverbs 3:5-6");
+        Console.WriteLine("2. 1 Nephi 3:7");
+        Console.WriteLine("3. Alma 37:37");
+        Console.WriteLine("4. 2 Nephi 31:5-6");
+        int option = int.Parse(Console.ReadLine());
+        Library selection = new Library();
+        selection.SetScripture(option);
 
-        string book = "Proverbs";
-        int chapter = 3;
-        int startVerse = 5; 
-        int endVerse = 6;
-        string scripture_text = "Trust in the Lord with all thine heart and lean not unto thine own understanding; in all thy ways acknowledge him, and he shall direct thy paths.";
 
-        Reference proverbs = new Reference(book, chapter, startVerse, endVerse);
-        Scripture scripture = new Scripture(proverbs,scripture_text);
+        Reference choice = new Reference(selection.GetBook(), selection.GetChapter(), selection.GetStartVerse(), selection.GetEndVerse());
+        Scripture scripture = new Scripture(choice,selection.GetScruptureText());
  
         
         do
