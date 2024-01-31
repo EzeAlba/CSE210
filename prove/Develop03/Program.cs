@@ -1,5 +1,9 @@
 using System;
+<<<<<<< HEAD
 //Exceeds the requirements because I added a new clase that stores different scriptures according to the user selection.
+=======
+//Exceeds the requirements because I added a new class "Library.cs" that stores different scriptures according to the user selection.
+>>>>>>> 4cd34c72a01ccf8821ce4a33f7c546f539b4eb77
 class Program
 {
     static void Main(string[] args)
