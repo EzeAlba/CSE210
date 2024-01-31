@@ -1,5 +1,5 @@
 using System;
-
+//Exceeds the requirements because I added a new clase that stores different scriptures according to the user selection.
 class Program
 {
     static void Main(string[] args)
