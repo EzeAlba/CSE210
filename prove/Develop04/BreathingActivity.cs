@@ -1,14 +1,21 @@
 using System;
 
-class Program
+public class BreathingActivity:Activity
 {
-    static void Main(string[] args)
+
+    public BreathingActivity(int duration) : base("Breathing Activity","This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breath.", duration)
     {
-        Console.WriteLine("How long, in seconds, would you like for your session?");
-        int duration = int.Parse(Console.ReadLine());
+        _duration = duration;
+    }
+
+    public void Run()
+    {
+        Console.Clear();
+        DisplayStartingMessage();
+        Console.Write("Get ready...");
+        ShowSpinner(5);
         DateTime starTime = DateTime.Now;
-        DateTime endTime = starTime.AddSeconds(duration);
-        // Bucle para iterar durante el tiempo deseado
+        DateTime endTime = starTime.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
@@ -33,5 +40,9 @@ class Program
             if (DateTime.Now >= endTime)
             break;
         }
+        Console.WriteLine("\n");
+        DisplayEndingMessage();
+
     }
+
 }
